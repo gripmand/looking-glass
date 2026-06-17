@@ -653,7 +653,7 @@ footer{max-width:760px;margin:0 auto;padding:0 22px 50px;font-size:12px;color:va
 (function(){
   var DIMS=[['point','a single seed of light — one dimensionless spark of pure potential.'],['line & plane','flatland: reality is a flat sheet, beings are shapes with no inside.'],['space','the solid world you know — separate objects, a here and a there.'],['time','duration: every object becomes a long worldline threaded through time.'],['branching','choice: each decision forks the path into parallel outcomes.'],['the tree of timelines','every possible life from this moment, all branching at once.'],['this universe entire','all of its past and future folded into a single object.'],['other beginnings','parallel universes that started from different initial conditions.'],['other laws','universes running on different constants and different rules.'],['the field of all possibility','every universe that could ever be, laid side by side.'],['the unified field','all possibilities as one vibrating membrane of light.'],['the source','undivided light — no distance, no separation. the One, omnipresent.']];
   var cv=document.getElementById('lb-cv'),gl=cv.getContext('webgl',{antialias:false})||cv.getContext('experimental-webgl');
-  if(!gl){cv.outerHTML='<p style="font-size:13px;color:var(--color-text-secondary)">WebGL unavailable.</p>';return;}
+  if(!gl){cv.outerHTML='<div style="padding:18px 10px;font-size:13px;color:var(--color-text-secondary);line-height:1.65">This 3-D view needs <b style="color:var(--color-text-primary);font-weight:500">WebGL</b>, which looks turned off in this browser. Switch on hardware acceleration (your browser&rsquo;s Settings &rarr; System &rarr; &ldquo;Use graphics acceleration when available&rdquo;) and reload, or open the link in Chrome, Edge or Firefox. Every other tab works without it.</div>';return;}
   var FS=['precision highp float;uniform vec2 uRes;uniform vec2 uRot;uniform float uZoom;uniform float uDim;uniform float uTime;',
     'mat2 r2(float a){float s=sin(a),c=cos(a);return mat2(c,-s,s,c);}',
     'float field(vec3 p){float g=0.0,amp=1.0;float oct=2.0+floor((uDim-1.0)/11.0*4.0);mat3 R=mat3(0.0,0.8,0.6,-0.8,0.36,-0.48,-0.6,-0.48,0.64);for(int i=0;i<6;i++){if(float(i)>=oct)break;vec3 c=abs(fract(p*1.5+0.5)-0.5);float d=min(min(c.x,c.y),c.z);g+=amp*exp(-d*d*55.0);p=R*p*1.8+vec3(uTime*0.02,uTime*0.01,0.0);amp*=0.55;}return g;}',
@@ -993,7 +993,7 @@ requestAnimationFrame(frame);
 <script>
 (function(){
   var cv=document.getElementById('fq-cv'),gl=cv.getContext('webgl',{antialias:false,premultipliedAlpha:false})||cv.getContext('experimental-webgl');
-  if(!gl){cv.outerHTML='<p style="font-size:13px;color:var(--color-text-secondary)">WebGL unavailable.</p>';return;}
+  if(!gl){cv.outerHTML='<div style="padding:18px 10px;font-size:13px;color:var(--color-text-secondary);line-height:1.65">This 3-D view needs <b style="color:var(--color-text-primary);font-weight:500">WebGL</b>, which looks turned off in this browser. Switch on hardware acceleration (your browser&rsquo;s Settings &rarr; System &rarr; &ldquo;Use graphics acceleration when available&rdquo;) and reload, or open the link in Chrome, Edge or Firefox. Every other tab works without it.</div>';return;}
   var FS=['precision highp float;uniform vec2 uRes;uniform vec2 uRot;uniform float uZoom;uniform float uDim;uniform float uTime;',
     'const float PI=3.14159265;',
     'vec3 freqTint(float f){f=clamp(f,0.0,1.0);vec3 cold=vec3(0.30,0.62,1.0);vec3 mid=vec3(0.55,0.85,0.95);vec3 warm=vec3(1.0,0.86,0.45);vec3 c=mix(cold,mid,smoothstep(0.0,0.5,f));c=mix(c,warm,smoothstep(0.45,1.0,f));return c;}',
@@ -3370,6 +3370,8 @@ applyScale();applySpeed();c2.fit(1.2);frame();
 <script>
 (function(){
  var panels=[].slice.call(document.querySelectorAll('.wpanel'));
+ var ORDER=['Light Matrix','Higgs','Frequencies','Double-Slit','Qubit Collapse','Entanglement','Quantum Computer','Chamber','Timeline','Tetrahedron','12 Dimensions','Gravity','Holographic Planes','Rocket','Cosmic Torus','Calendar','One Reality','Heart & Mind','Connections'];
+ panels.sort(function(a,b){var ia=ORDER.indexOf(a.getAttribute('data-title'));var ib=ORDER.indexOf(b.getAttribute('data-title'));if(ia<0)ia=999;if(ib<0)ib=999;return ia-ib;});
  var nav=document.getElementById('nav');
  panels.forEach(function(p,i){var b=document.createElement('button');b.type='button';b.textContent=p.getAttribute('data-title');b.addEventListener('click',function(){show(i);});nav.appendChild(b);});
  function kick(){try{window.dispatchEvent(new Event('resize'));}catch(e){}}
