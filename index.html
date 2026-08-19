@@ -86,12 +86,127 @@ footer{max-width:760px;margin:0 auto;padding:0 22px 50px;font-size:12px;color:va
 @media(max-width:560px){.lg-dual{grid-template-columns:1fr}}
 </style></head>
 <body>
-<header><h1>Looking Glass — Master Console</h1><p>Every interactive we built so far. The atlas lens and probability field are left out for now — we'll add those, plus the new experiments, next.</p></header>
+<header><h1>Looking Glass — Master Console</h1><p>Twenty-two interactives on the real physics of reality, with one metaphysical lens laid over the top — and the seam between them drawn on every single control. New here? <b>Start Here</b> explains how to read it.</p></header>
 <nav id="nav"></nav>
 <main id="panels">
-<section class="wpanel" data-title="Connections">
-<div class="wtitle">How it all connects &middot; the honest map</div>
-<div class="wdesc">The real structure of this console: where the science genuinely connects (green), where it&rsquo;s real but unconfirmed &mdash; string theory&rsquo;s unification, and the serious-but-contested brain science of consciousness (amber) &mdash; and where the leap stays mine or the question is still open (red). Every green link is established and cited below.</div>
+<section class="wpanel" data-title="Start Here">
+<style>
+.sh-hero{position:relative;margin:2px 0 26px;padding:26px 0 24px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.sh-hero::before{content:"";position:absolute;top:-30px;left:-40vw;right:-40vw;height:360px;background:radial-gradient(ellipse 46% 100% at 50% 0%,rgba(127,180,255,0.11),rgba(150,120,255,0.055) 45%,transparent 72%);pointer-events:none;z-index:-1}
+.sh-eyebrow{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--color-text-tertiary);margin:0 0 14px}
+.sh-hero h2{margin:0;font-size:30px;line-height:1.28;font-weight:300;color:var(--color-text-primary);letter-spacing:-.01em}
+.sh-hero h2 em{font-style:normal;color:#7fb4ff}
+.sh-hero h2 i{font-style:normal;color:#c2aaff}
+.sh-hero p{margin:16px 0 0;font-size:14.5px;line-height:1.65;color:var(--color-text-secondary);max-width:62ch}
+.sh-rule{margin:0 0 4px;padding:17px 20px;border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-secondary);border-left:2.5px solid var(--color-text-primary);background:linear-gradient(100deg,rgba(150,170,210,0.075),rgba(150,170,210,0.015))}
+.sh-rule-k{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--color-text-tertiary);display:block;margin-bottom:7px}
+.sh-rule-v{margin:0;font-size:15.5px;line-height:1.6;color:var(--color-text-primary);font-weight:400}
+.sh-h{font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--color-text-tertiary);margin:36px 0 5px}
+.sh-sub{font-size:13.5px;line-height:1.62;color:var(--color-text-secondary);margin:0 0 15px;max-width:66ch}
+.sh-sub b{color:var(--color-text-primary);font-weight:500}
+.sh-sub i{font-style:italic;color:var(--color-text-primary)}
+.sh-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.sh-tier{border-radius:var(--border-radius-lg);padding:16px 17px 17px;border:0.5px solid;position:relative;overflow:hidden;min-width:0}
+.sh-tier::after{content:"";position:absolute;top:0;left:0;right:0;height:2px}
+.sh-tier.est{border-color:rgba(122,216,138,0.42);background:linear-gradient(180deg,rgba(122,216,138,0.09),rgba(122,216,138,0.015))}
+.sh-tier.est::after{background:var(--color-text-success)}
+.sh-tier.thy{border-color:rgba(127,180,255,0.42);background:linear-gradient(180deg,rgba(127,180,255,0.09),rgba(127,180,255,0.015))}
+.sh-tier.thy::after{background:var(--color-text-info)}
+.sh-tier.lens{border-color:rgba(150,120,255,0.44);background:linear-gradient(180deg,rgba(150,120,255,0.11),rgba(150,120,255,0.02))}
+.sh-tier.lens::after{background:#9a7fe0}
+.sh-tier-g{font-size:19px;line-height:1;margin-bottom:9px;display:block}
+.sh-tier.est .sh-tier-g{color:var(--color-text-success)}
+.sh-tier.thy .sh-tier-g{color:var(--color-text-info)}
+.sh-tier.lens .sh-tier-g{color:#c2aaff}
+.sh-tier-n{font-size:13.5px;font-weight:600;color:var(--color-text-primary);margin:0 0 6px}
+.sh-tier-d{font-size:12.5px;line-height:1.58;color:var(--color-text-secondary);margin:0 0 10px}
+.sh-tier-e{font-size:11.5px;line-height:1.52;color:var(--color-text-tertiary);margin:0;padding-top:9px;border-top:0.5px solid var(--color-border-tertiary)}
+.sh-tier-e b{display:block;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin-bottom:3px;color:var(--color-text-tertiary)}
+.sh-demo{border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);background:var(--color-background-tertiary);padding:16px 17px}
+.sh-demo-cap{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:12px}
+.sh-demo-pill{font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:3px 9px;border-radius:999px;border:1px solid var(--color-border-secondary);color:var(--color-text-tertiary)}
+.sh-demo-t{font-size:11.5px;color:var(--color-text-tertiary)}
+.sh-fake{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.sh-fake-l{font-size:12px;color:var(--color-text-secondary);min-width:118px}
+.sh-fake-tr{flex:1;height:3px;border-radius:2px;background:var(--color-border-tertiary);position:relative}
+.sh-fake-tr::before{content:"";position:absolute;left:0;top:0;height:3px;width:18.2%;border-radius:2px;background:rgba(127,180,255,0.55)}
+.sh-fake-tr::after{content:"";position:absolute;left:calc(18.2% - 6px);top:-4.5px;width:12px;height:12px;border-radius:50%;background:#7fb4ff}
+.sh-fake-v{font-size:13px;font-weight:500;color:var(--color-text-info);min-width:34px;text-align:right}
+.sh-demo-note{font-size:12px;line-height:1.6;color:var(--color-text-tertiary);margin:13px 0 0}
+.sh-demo-note i{font-style:italic;color:var(--color-text-secondary)}
+.sh-gaps{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sh-gap{border-radius:var(--border-radius-lg);border:0.5px solid rgba(255,138,138,0.32);border-left:2.5px solid var(--color-text-danger);background:linear-gradient(100deg,rgba(255,138,138,0.065),rgba(255,138,138,0.012));padding:14px 16px}
+.sh-gap-n{font-size:13px;font-weight:600;color:#ffb3b3;margin:0 0 5px}
+.sh-gap-d{font-size:12.5px;line-height:1.58;color:var(--color-text-secondary);margin:0}
+.sh-guide{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}
+.sh-g{border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);background:var(--color-background-secondary);padding:14px 16px;min-width:0}
+.sh-g-h{display:flex;align-items:baseline;gap:8px;margin-bottom:4px;flex-wrap:wrap}
+.sh-g-n{font-size:13px;font-weight:600;color:var(--color-text-primary)}
+.sh-g-t{font-size:9.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.sh-g-t.est{color:var(--color-text-success)}
+.sh-g-t.thy{color:var(--color-text-info)}
+.sh-g-t.lens{color:#c2aaff}
+.sh-g-t.mix{color:var(--color-text-warning)}
+.sh-g-d{font-size:12px;line-height:1.55;color:var(--color-text-tertiary);margin:0 0 8px}
+.sh-g-p{font-size:11.5px;line-height:1.8;color:var(--color-text-secondary);margin:0;font-family:var(--font-mono)}
+@media(max-width:640px){.sh-tiers{grid-template-columns:1fr}.sh-gaps{grid-template-columns:1fr}.sh-guide{grid-template-columns:1fr}.sh-hero h2{font-size:23px}}
+</style>
+
+<div class="sh-hero">
+<p class="sh-eyebrow">Looking Glass &middot; how to read this console</p>
+<h2>Twenty-two interactives built on the real physics of reality &mdash; with one <em>metaphysical lens</em> laid over the top, and <i>not once</i> pretending to be the physics.</h2>
+<p>Almost everything that braids science with meaning blurs the seam between them. This console draws that seam on every single control. Learn the three marks below and the rest of it reads itself &mdash; including the parts where I tell you the leap is mine.</p>
+</div>
+
+<div class="sh-rule">
+<span class="sh-rule-k">The one rule</span>
+<p class="sh-rule-v">Real facts stay real. The lens stays the lens. Anchoring the lens to physics is never mistaken for proof.</p>
+</div>
+
+<div class="sh-h">The three marks</div>
+<p class="sh-sub">Every claim in here carries one of these. Nothing is left unlabelled &mdash; least of all the parts that are only mine.</p>
+<div class="sh-tiers">
+  <div class="sh-tier est">
+    <span class="sh-tier-g">&#9673;</span>
+    <p class="sh-tier-n">Established science</p>
+    <p class="sh-tier-d">Measured, replicated, uncontroversial. A working physicist would read it and simply nod. Cited to the primary literature.</p>
+    <p class="sh-tier-e"><b>For example</b>Stable closed orbits exist only in three spatial dimensions. Black-hole entropy scales with horizon area.</p>
+  </div>
+  <div class="sh-tier thy">
+    <span class="sh-tier-g">&#9681;</span>
+    <p class="sh-tier-n">Real but unconfirmed</p>
+    <p class="sh-tier-d">Serious, published, testable in principle &mdash; and not yet confirmed. Real science that may still turn out to be wrong.</p>
+    <p class="sh-tier-e"><b>For example</b>String theory&rsquo;s extra dimensions. Whether space is a finite 3-torus. The brain science of consciousness.</p>
+  </div>
+  <div class="sh-tier lens">
+    <span class="sh-tier-g">&#10022;</span>
+    <p class="sh-tier-n">Personal belief &mdash; the lens</p>
+    <p class="sh-tier-d">Mine. A live hypothesis held with conviction and owned as belief, leaning on none of the science sitting beside it.</p>
+    <p class="sh-tier-e"><b>For example</b>The fractal-holographic matrix of light. Consciousness as the thread physics hasn&rsquo;t found. The levels D1&ndash;D12.</p>
+  </div>
+</div>
+
+<div class="sh-h">Every lever shows its work</div>
+<p class="sh-sub">This is the piece that makes the seam impossible to lose. Move any slider in this console and it reports <b>two readings side by side</b> &mdash; the real physical parameter you just changed, and the lens reading of that same move. They update together. They never merge.</p>
+<div class="sh-demo">
+  <div class="sh-demo-cap"><span class="sh-demo-pill">Sample</span><span class="sh-demo-t">taken from the Gravity panel &mdash; this is exactly what you will see</span></div>
+  <div class="sh-fake"><span class="sh-fake-l">spatial dimensions</span><span class="sh-fake-tr"></span><span class="sh-fake-v">3</span></div>
+  <div class="lg-dual">
+    <div class="lg-dual-c real"><span class="lg-dual-k">&#9881; what the lever really sets</span><span class="lg-dual-v lg-dual-real">3 spatial dims &middot; F &#8733; 1/r&sup2; &middot; stable closed orbit &middot; our world</span><span class="lg-dual-tier est">established physics (extra dims D4+ unconfirmed)</span></div>
+    <div class="lg-dual-c lens"><span class="lg-dual-k">&#10022; the lens reading</span><span class="lg-dual-v lg-dual-lens">consciousness D3</span></div>
+  </div>
+  <p class="sh-demo-note">The left box is checkable against a textbook. The right box is mine. One slider moved one thing &mdash; the two boxes are two <i>readings</i> of that one thing, and only the left one is a claim about the world.</p>
+</div>
+
+<div class="sh-h">The two true gaps</div>
+<p class="sh-sub">Two places where there is no bridge yet &mdash; not a weak bridge, not a contested one. Nothing. I could paper over these and the console would feel more complete. It would also be lying.</p>
+<div class="sh-gaps">
+  <div class="sh-gap"><p class="sh-gap-n">Quantum gravity</p><p class="sh-gap-d">Quantum mechanics and general relativity have no agreed unification. String theory is the unconfirmed attempt; holography is a real partial link. There is no finished theory, and this console does not have one.</p></div>
+  <div class="sh-gap"><p class="sh-gap-n">Physics &rarr; consciousness</p><p class="sh-gap-d">The only <i>established</i> link runs mind &rarr; brain &rarr; body &rarr; world. Direct claims &mdash; observation collapsing the wavefunction, mind over matter &mdash; are not accepted. Why experience happens at all is unsolved.</p></div>
+</div>
+
+<div class="sh-h">The honest map</div>
+<p class="sh-sub">Where the science genuinely connects (green), where it is real but unconfirmed &mdash; string theory&rsquo;s unification, and the serious-but-contested brain science of consciousness (amber) &mdash; and where the leap stays mine or the question is still open (red). Every green link is established and cited further down this page.</p>
 <div style="width:100%;overflow-x:auto;margin:4px 0 2px">
 <svg viewBox="0 0 820 600" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;min-width:660px;display:block" font-family="var(--font-sans)">
 <title>How the panels relate: established links, an unconfirmed bridge, and two true gaps</title>
@@ -147,6 +262,44 @@ footer{max-width:760px;margin:0 auto;padding:0 22px 50px;font-size:12px;color:va
 <line x1="385" y1="560" x2="411" y2="560" stroke="var(--color-text-danger)" stroke-width="2" stroke-dasharray="5 4"/>
 <text x="417" y="564" font-size="11.5" fill="var(--color-text-secondary)">open gap / no bridge</text>
 </svg></div>
+
+<div class="sh-h">Where to go &mdash; all twenty-two panels</div>
+<p class="sh-sub">Grouped by what they actually are, not by subject. The grouping <i>is</i> the tiering: the first three boxes are established science, the fourth is real-but-unconfirmed, the fifth is openly mine.</p>
+<div class="sh-guide">
+  <div class="sh-g">
+    <div class="sh-g-h"><span class="sh-g-n">The quantum floor</span><span class="sh-g-t est">&#9673; established</span></div>
+    <p class="sh-g-d">What the world actually does when you look closely: interference, superposition, measurement, non-locality.</p>
+    <p class="sh-g-p">Double-Slit &middot; Qubit Collapse &middot; Entanglement &middot; Quantum Computer</p>
+  </div>
+  <div class="sh-g">
+    <div class="sh-g-h"><span class="sh-g-n">Fields, force &amp; time</span><span class="sh-g-t est">&#9673; established</span></div>
+    <p class="sh-g-d">Where mass comes from, why three dimensions is the one stable case, and how time bends under speed and gravity.</p>
+    <p class="sh-g-p">Higgs &middot; Gravity &middot; Rocket &middot; Calendar</p>
+  </div>
+  <div class="sh-g">
+    <div class="sh-g-h"><span class="sh-g-n">Nonlinear &amp; emergent</span><span class="sh-g-t est">&#9673; established</span></div>
+    <p class="sh-g-d">Self-similarity, deterministic unpredictability, spontaneous synchronization, and order that appears from throughflow.</p>
+    <p class="sh-g-p">Chamber &middot; Timeline &middot; Coupling &middot; Order from Flow</p>
+  </div>
+  <div class="sh-g">
+    <div class="sh-g-h"><span class="sh-g-n">The unconfirmed frontier</span><span class="sh-g-t thy">&#9681; real, unconfirmed</span></div>
+    <p class="sh-g-d">Live science that has not landed &mdash; extra dimensions, cosmic topology, the measured heart field. Real work, no verdict yet.</p>
+    <p class="sh-g-p">12 Dimensions &middot; Frequencies &middot; Tetrahedron &middot; Cosmic Torus &middot; One Reality &middot; Heart &amp; Mind</p>
+  </div>
+  <div class="sh-g">
+    <div class="sh-g-h"><span class="sh-g-n">The lens itself</span><span class="sh-g-t lens">&#10022; personal belief</span></div>
+    <p class="sh-g-d">My worldview, shown as a worldview. Nested tori of light unfolding from a source; planes revealed rather than created.</p>
+    <p class="sh-g-p">Light Matrix &middot; Holographic Planes</p>
+  </div>
+  <div class="sh-g">
+    <div class="sh-g-h"><span class="sh-g-n">The honesty apparatus</span><span class="sh-g-t mix">the method</span></div>
+    <p class="sh-g-d">This page, and its mirror at the other end: the nine ways this console gets misread, each set against what the physics actually says.</p>
+    <p class="sh-g-p">Start Here &middot; Misreadings</p>
+  </div>
+</div>
+
+<div class="sh-h">The cited links &mdash; every green line, sourced</div>
+<p class="sh-sub">The green connections on the map above are not assertions. Each one is established science with its primary reference, so you can check any of them without taking my word for it.</p>
 <div class="lg-rsch">
 <div class="lg-rsch-head"><span class="lg-badge lg-badge-est">Established science</span><span class="lg-rsch-title">the real, cited links between the panels</span></div>
 <p class="lg-rsch-h">Quantum mechanics &harr; chaos &amp; fractals</p>
@@ -2066,6 +2219,147 @@ Speculative / unresolved (interpretation, not physics): what the experiment mean
 <li><a href="https://plato.stanford.edu/entries/qm-decoherence/" target="_blank" rel="noopener noreferrer">The Role of Decoherence in Quantum Mechanics</a> — Stanford Encyclopedia of Philosophy</li>
 <li><a href="https://www.nature.com/articles/s41598-020-68181-1" target="_blank" rel="noopener noreferrer">Quantum double-double-slit experiment with momentum entangled photons</a> — Scientific Reports (Nature), Kaur &amp; Singh 2020</li>
 </ul></div>
+<div style="margin-top:30px;padding-top:24px;border-top:0.5px solid var(--color-border-tertiary)">
+<div class="wtitle" style="font-size:17px">The same experiment, run in time</div>
+<div class="wdesc">Everything above put the two slits side by side <em>in space</em>, and the fringes appeared across the screen &mdash; spread out in <b>angle</b>. In 2023 a team at Imperial College London did it the other way: they left the light where it was and opened two slits in <em>time</em>, a few femtoseconds apart. The fringes still appeared &mdash; but spread out in <b>colour</b>.</div>
+<style>
+.ts-wrap{display:flex;flex-direction:column;gap:10px}
+.ts-box{position:relative;border-radius:var(--border-radius-lg);overflow:hidden;background:#04050b;border:0.5px solid var(--color-border-tertiary)}
+.ts-box canvas{display:block;width:100%}
+.ts-box canvas#tsTime{height:132px}
+.ts-box canvas#tsSpec{height:186px}
+.ts-cap{position:absolute;top:9px;left:11px;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--color-text-tertiary);pointer-events:none}
+.ts-rw{display:flex;align-items:center;gap:12px;margin-top:14px}
+.ts-rw label{font-size:12px;color:var(--color-text-secondary);min-width:172px}
+.ts-rw input[type=range]{flex:1}
+.ts-rw .out{font-size:13px;font-weight:500;color:var(--color-text-info);min-width:72px;text-align:right;font-family:var(--font-mono)}
+.ts-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.ts-p{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:11px 13px}
+.ts-p .lab{font-size:11px;color:var(--color-text-secondary);margin:0 0 3px}
+.ts-p .val{font-size:18px;font-weight:500;color:var(--color-text-primary);margin:0;font-family:var(--font-mono)}
+.ts-p .sub{font-size:11px;color:var(--color-text-tertiary);margin:3px 0 0}
+.ts-duality{margin-top:12px;padding:12px 15px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary);background:var(--color-background-tertiary)}
+.ts-duality table{width:100%;border-collapse:collapse;font-size:12.5px}
+.ts-duality th{text-align:left;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-tertiary);font-weight:600;padding:0 8px 7px 0}
+.ts-duality td{padding:5px 8px 5px 0;color:var(--color-text-secondary);border-top:0.5px solid var(--color-border-tertiary);vertical-align:top}
+.ts-duality td:first-child{color:var(--color-text-tertiary);white-space:nowrap}
+@media(max-width:640px){.ts-pair{grid-template-columns:1fr}.ts-rw label{min-width:120px}}
+</style>
+<div class="ts-wrap">
+<div class="ts-box"><canvas id="tsTime"></canvas><span class="ts-cap">two slits in time &mdash; the light arrives twice</span></div>
+<div class="ts-box"><canvas id="tsSpec"></canvas><span class="ts-cap">what the spectrometer sees</span></div>
+</div>
+<div class="ts-rw"><label for="tsDt">gap between the time slits</label><input id="tsDt" type="range" min="30" max="160" step="1" value="60"><span class="out" id="tsDtOut">6.0 fs</span></div>
+<div class="ts-pair">
+<div class="ts-p"><p class="lab">fringe spacing in frequency</p><p class="val" id="tsSpacing">167 THz</p><p class="sub">exactly 1/&Delta;t &mdash; nothing else</p></div>
+<div class="ts-p"><p class="lab">fringes under the envelope</p><p class="val" id="tsCount">3</p><p class="sub">wider gap, finer fringes</p></div>
+</div>
+<div class="ts-duality">
+<table><tr><th>&nbsp;</th><th>slits in space</th><th>slits in time</th></tr>
+<tr><td>what is separated</td><td>two positions, distance d</td><td>two moments, gap &Delta;t</td></tr>
+<tr><td>fringes appear in</td><td>angle &theta; on the screen</td><td>frequency &mdash; the colour</td></tr>
+<tr><td>spacing goes as</td><td>&lambda; / d</td><td>1 / &Delta;t</td></tr>
+<tr><td>widen the gap and</td><td>fringes get finer</td><td>fringes get finer</td></tr>
+</table>
+</div>
+<script>
+(function(){
+ var tc=document.getElementById('tsTime'),sc=document.getElementById('tsSpec');if(!tc||!sc)return;
+ var t2=tc.getContext('2d'),s2=sc.getContext('2d');
+ var dtEl=document.getElementById('tsDt'),dtOut=document.getElementById('tsDtOut');
+ var spEl=document.getElementById('tsSpacing'),cnEl=document.getElementById('tsCount');
+ var SIG=2.0;                 // pulse duration, fs
+ var NU0=0.375;               // carrier frequency, PHz  (800 nm)
+ var SPAN=0.30;               // plotted detuning half-range, PHz
+ var dprL=Math.min(window.devicePixelRatio||1,1.4);
+ var DT=6.0;
+ function fit(cv){var w=Math.max(2,(cv.clientWidth*dprL)|0),h=Math.max(2,(cv.clientHeight*dprL)|0);if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h;}return[cv.width,cv.height];}
+ window.addEventListener('resize',function(){fit(tc);fit(sc);draw();});
+ function readDt(){DT=(+dtEl.value)/10;dtOut.textContent=DT.toFixed(1)+' fs';
+  var sp=1/DT;                                     // PHz
+  spEl.textContent=Math.round(sp*1000)+' THz';
+  var envFWHMnu=2*Math.sqrt(Math.log(2))/(Math.PI*SIG);  // rough visible width in PHz
+  cnEl.textContent=Math.max(1,Math.round(envFWHMnu/sp*1.6));
+  draw();}
+ dtEl.addEventListener('input',readDt);
+ function env(t){return Math.exp(-t*t/(2*SIG*SIG));}
+ function drawTime(){
+  var d=fit(tc),W=d[0],H=d[1];
+  t2.fillStyle='#04050b';t2.fillRect(0,0,W,H);
+  var L=14*dprL,R=14*dprL,pw=W-L-R,mid=H*0.56,ampH=H*0.30;
+  var T=11; // plotted half-range, fs
+  function X(t){return L+((t+T)/(2*T))*pw;}
+  t2.strokeStyle='rgba(150,170,210,0.16)';t2.lineWidth=1;t2.beginPath();t2.moveTo(L,mid);t2.lineTo(L+pw,mid);t2.stroke();
+  // the two gate windows
+  [-DT/2,DT/2].forEach(function(c){
+   var g=t2.createLinearGradient(X(c-SIG*2.2),0,X(c+SIG*2.2),0);
+   g.addColorStop(0,'rgba(127,180,255,0)');g.addColorStop(0.5,'rgba(127,180,255,0.13)');g.addColorStop(1,'rgba(127,180,255,0)');
+   t2.fillStyle=g;t2.fillRect(X(c-SIG*2.2),H*0.10,X(c+SIG*2.2)-X(c-SIG*2.2),H*0.80);});
+  // the field: carrier under the two envelopes
+  t2.strokeStyle='rgba(255,214,140,0.95)';t2.lineWidth=1.5*dprL;t2.beginPath();
+  for(var i=0;i<=900;i++){
+   var t=-T+(i/900)*2*T;
+   var a=env(t-DT/2)+env(t+DT/2);
+   var y=mid-a*Math.cos(2*Math.PI*NU0*t*3.1)*ampH;
+   if(i===0)t2.moveTo(X(t),y);else t2.lineTo(X(t),y);}
+  t2.stroke();
+  // envelope outline
+  t2.strokeStyle='rgba(127,180,255,0.5)';t2.lineWidth=1*dprL;t2.setLineDash([3*dprL,3*dprL]);
+  [1,-1].forEach(function(s){t2.beginPath();
+   for(var i=0;i<=400;i++){var t=-T+(i/400)*2*T;var a=env(t-DT/2)+env(t+DT/2);var y=mid-s*a*ampH;
+    if(i===0)t2.moveTo(X(t),y);else t2.lineTo(X(t),y);}t2.stroke();});
+  t2.setLineDash([]);
+  t2.fillStyle='rgba(114,122,141,0.95)';t2.font=(10*dprL)+'px '+getComputedStyle(document.body).fontFamily;
+  t2.textAlign='center';t2.fillText('time →',W/2,H-6*dprL);
+  t2.fillStyle='rgba(127,180,255,0.9)';
+  t2.fillText('Δt = '+DT.toFixed(1)+' fs',(X(-DT/2)+X(DT/2))/2,H*0.14);
+  // gap arrow
+  t2.strokeStyle='rgba(127,180,255,0.6)';t2.lineWidth=1*dprL;t2.beginPath();
+  t2.moveTo(X(-DT/2),H*0.19);t2.lineTo(X(DT/2),H*0.19);t2.stroke();}
+ function drawSpec(){
+  var d=fit(sc),W=d[0],H=d[1];
+  s2.fillStyle='#04050b';s2.fillRect(0,0,W,H);
+  var L=16*dprL,R=16*dprL,T=26*dprL,B=28*dprL,pw=W-L-R,ph=H-T-B;
+  function X(dn){return L+((dn+SPAN)/(2*SPAN))*pw;}
+  function Y(v){return T+(1-v)*ph;}
+  function I(dn){var e=Math.exp(-Math.pow(2*Math.PI*SIG*dn,2)/2);return e*e*Math.pow(Math.cos(Math.PI*dn*DT),2);}
+  // colour-graded fill under the curve
+  for(var i=0;i<=560;i++){
+   var dn=-SPAN+(i/560)*2*SPAN,v=I(dn);
+   if(v<0.002)continue;
+   var x=X(dn);
+   var hue=210-((dn+SPAN)/(2*SPAN))*190; // blue side -> red side
+   s2.fillStyle='hsla('+(hue|0)+',92%,62%,'+(0.20+0.55*v).toFixed(3)+')';
+   s2.fillRect(x,Y(v),Math.max(1,pw/560+1),ph*v);}
+  // the curve itself
+  s2.strokeStyle='rgba(255,255,255,0.92)';s2.lineWidth=1.6*dprL;s2.beginPath();
+  for(var j=0;j<=900;j++){var dn2=-SPAN+(j/900)*2*SPAN;var y=Y(I(dn2));if(j===0)s2.moveTo(X(dn2),y);else s2.lineTo(X(dn2),y);}
+  s2.stroke();
+  // the single-slit envelope, for contrast
+  s2.strokeStyle='rgba(127,180,255,0.45)';s2.lineWidth=1*dprL;s2.setLineDash([4*dprL,4*dprL]);s2.beginPath();
+  for(var m=0;m<=400;m++){var dn3=-SPAN+(m/400)*2*SPAN;var e=Math.exp(-Math.pow(2*Math.PI*SIG*dn3,2)/2);var y3=Y(e*e);
+   if(m===0)s2.moveTo(X(dn3),y3);else s2.lineTo(X(dn3),y3);}
+  s2.stroke();s2.setLineDash([]);
+  s2.strokeStyle='rgba(150,170,210,0.18)';s2.lineWidth=1;s2.beginPath();s2.moveTo(L,Y(0));s2.lineTo(L+pw,Y(0));s2.stroke();
+  s2.fillStyle='rgba(114,122,141,0.95)';s2.font=(10*dprL)+'px '+getComputedStyle(document.body).fontFamily;
+  s2.textAlign='center';s2.fillText('bluer ←',L+pw*0.14,H-9*dprL);s2.fillText('frequency',W/2,H-9*dprL);s2.fillText('→ redder',L+pw*0.86,H-9*dprL);
+  s2.textAlign='left';s2.fillStyle='rgba(127,180,255,0.85)';s2.fillText('one slit only (envelope)',L+4*dprL,T-9*dprL);
+  s2.textAlign='right';s2.fillStyle='rgba(255,255,255,0.85)';s2.fillText('two time slits — fringes',L+pw-4*dprL,T-9*dprL);}
+ function draw(){drawTime();drawSpec();}
+ fit(tc);fit(sc);readDt();
+})();
+</script>
+<div class="lg-rsch">
+<div class="lg-rsch-head"><span class="lg-badge lg-badge-est">Established science</span><span class="lg-rsch-title">double-slit diffraction in time &mdash; Imperial College London, 2023</span></div>
+<p class="lg-rsch-h">How it works</p><p class="lg-rsch-p">Romain Tirole, Riccardo Sapienza and colleagues used a thin film of indium tin oxide, a material whose refractive index can be changed on an extraordinarily fast timescale. A strong pump pulse switched the film&#x27;s reflectivity on and off twice in quick succession, a few femtoseconds apart, so that a probe beam was effectively let through at two separate <em>instants</em> rather than at two separate places. The reflected light came back carrying interference fringes &mdash; not spread across space, but spread across frequency, so the light had visibly changed colour into a fringed spectrum. The narrower the gap between the two moments, the wider apart the colour fringes, exactly mirroring how narrowing the gap between two spatial slits widens the fringes on a screen. The team also found the film responded far faster than expected, on the order of a few femtoseconds, which is what made optical-frequency time slits possible at all.</p>
+<p class="lg-rsch-h">Why the two versions are the same experiment</p><p class="lg-rsch-p">Both are the same mathematics wearing different clothes. Position and momentum are Fourier conjugates, and so are time and frequency. Two openings separated by a distance <i>d</i> produce a fringe pattern whose spacing in angle goes as &lambda;/<i>d</i>; two openings separated by an interval &Delta;t produce fringes whose spacing in frequency is exactly 1/&Delta;t. That is the entire content of the widget above &mdash; two Gaussian pulses a time &Delta;t apart have a spectrum proportional to cos&sup2;(&pi;&Delta;&nu;&Delta;t) under a Gaussian envelope, which is the temporal twin of the familiar two-slit formula. This duality is old and deep; what was new in 2023 was doing it to light, at optical frequencies, in a real material.</p>
+<p class="lg-rsch-h">Real vs. speculative</p><p class="lg-rsch-p">The experiment is real, peer-reviewed and published in Nature Physics, and the physics is standard wave optics in a time-varying medium &mdash; an active field usually called photonic time crystals or time-varying photonics. What it does <em>not</em> show, despite how it is often retold: it does not make time malleable, does not edit the past, does not reveal a &ldquo;refresh rate&rdquo; of reality, and says nothing whatsoever about memory or psychology. A time slit is a shutter, not a door. The result is a beautiful confirmation of a duality physicists have understood for a century, executed in a regime nobody had reached before &mdash; which is quite enough for it to be remarkable on its own terms.</p>
+<p class="lg-rsch-h">Sources</p><ul class="lg-rsch-src">
+<li><a href="https://doi.org/10.1038/s41567-023-01993-w" target="_blank" rel="noopener noreferrer">Double-slit time diffraction at optical frequencies</a> &#8212; Nature Physics 19, 999-1002 (2023), Tirole, Vezzoli, Galiffi, Robertson, Maurice, Tilmann, Maier, Pendry &amp; Sapienza</li>
+<li><a href="https://www.imperial.ac.uk/news/244896/light-experiment-rewrites-textbook-quantum-physics/" target="_blank" rel="noopener noreferrer">Time slits: light experiment revisits a classic of quantum physics</a> &#8212; Imperial College London news release (2023)</li>
+<li><a href="https://physicsworld.com/a/double-slit-experiment-that-proved-the-wave-nature-of-light-is-recreated-in-time/" target="_blank" rel="noopener noreferrer">Double-slit experiment is recreated in time</a> &#8212; Physics World (Institute of Physics), 2023</li>
+</ul></div>
+</div>
 </section>
 <section class="wpanel" data-title="Entanglement">
 <div class="wtitle">Quantum entanglement</div>
@@ -2293,6 +2587,302 @@ applyScale();applySpeed();c2.fit(1.2);frame();
 <li><a href="https://en.wikipedia.org/wiki/Lorenz_system" target="_blank" rel="noopener noreferrer">Lorenz system</a> — Wikipedia</li>
 <li><a href="https://en.wikipedia.org/wiki/Butterfly_effect" target="_blank" rel="noopener noreferrer">Butterfly effect</a> — Wikipedia</li>
 <li><a href="https://www.technologyreview.com/2011/02/22/196987/when-the-butterfly-effect-took-flight/" target="_blank" rel="noopener noreferrer">When the Butterfly Effect Took Flight</a> — MIT Technology Review</li>
+</ul></div>
+</section>
+<section class="wpanel" data-title="Coupling">
+<div class="wtitle">Coupling &middot; when a crowd falls into step</div>
+<div class="wdesc">A hundred and sixty oscillators, every one running at its own natural pace. Each is pulled a little toward the average of all the others. Raise the coupling and watch them find each other &mdash; not with a snap, but as a smooth, threshold-crossing bloom. This is the only panel in the console with more than one thing in it.</div>
+<style>
+.kr-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.kr-box{position:relative;border-radius:var(--border-radius-lg);overflow:hidden;background:#04050b;border:0.5px solid var(--color-border-tertiary)}
+.kr-box canvas{display:block;width:100%;height:300px}
+.kr-cap{position:absolute;top:9px;left:11px;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--color-text-tertiary);pointer-events:none}
+.kr-rw{display:flex;align-items:center;gap:12px;margin-top:14px}
+.kr-rw label{font-size:12px;color:var(--color-text-secondary);min-width:150px}
+.kr-rw input[type=range]{flex:1}
+.kr-rw .out{font-size:13px;font-weight:500;color:var(--color-text-info);min-width:70px;text-align:right;font-family:var(--font-mono)}
+.kr-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:10px;margin-top:14px}
+.kr-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px 14px}
+.kr-card .lab{font-size:11px;color:var(--color-text-secondary);margin:0 0 4px}
+.kr-card .val{font-size:22px;font-weight:500;color:var(--color-text-primary);margin:0;font-family:var(--font-mono)}
+.kr-card .sub{font-size:11px;color:var(--color-text-tertiary);margin:3px 0 0}
+.kr-state{margin-top:12px;padding:11px 14px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary);background:var(--color-background-tertiary);font-size:12.5px;line-height:1.58;color:var(--color-text-secondary)}
+.kr-state b{color:var(--color-text-primary);font-weight:500}
+@media(max-width:640px){.kr-grid{grid-template-columns:1fr}.kr-box canvas{height:260px}.kr-rw label{min-width:120px}}
+</style>
+<div class="kr-grid">
+<div class="kr-box"><canvas id="krRing"></canvas><span class="kr-cap">the population</span></div>
+<div class="kr-box"><canvas id="krPlot"></canvas><span class="kr-cap">order vs coupling</span></div>
+</div>
+<div class="kr-rw"><label for="krK">coupling strength <i>K</i></label><input id="krK" type="range" min="0" max="4" step="0.02" value="0"><span class="out" id="krKOut">0.00</span></div>
+<div class="kr-rw"><label for="krG">spread of natures &gamma;</label><input id="krG" type="range" min="0.1" max="1.5" step="0.02" value="0.5"><span class="out" id="krGOut">0.50</span></div>
+<div class="kr-cards">
+<div class="kr-card"><p class="lab">order <i>r</i></p><p class="val" id="krR">0.08</p><p class="sub">measured, live</p></div>
+<div class="kr-card"><p class="lab">threshold <i>K</i><sub>c</sub></p><p class="val" id="krKc">1.00</p><p class="sub">= 2&gamma;, exact</p></div>
+<div class="kr-card"><p class="lab">locked</p><p class="val" id="krLock">0%</p><p class="sub">of 160 oscillators</p></div>
+<div class="kr-card"><p class="lab">floor</p><p class="val" id="krFloor">0.08</p><p class="sub">&asymp; 1/&radic;N, chance alone</p></div>
+</div>
+<p class="kr-state" id="krState">&mdash;</p>
+<script>
+(function(){
+ var ringCv=document.getElementById('krRing'),plotCv=document.getElementById('krPlot');
+ if(!ringCv||!plotCv)return;
+ var rx=ringCv.getContext('2d'),px=plotCv.getContext('2d');
+ var kEl=document.getElementById('krK'),gEl=document.getElementById('krG');
+ var kOut=document.getElementById('krKOut'),gOut=document.getElementById('krGOut');
+ var rEl=document.getElementById('krR'),kcEl=document.getElementById('krKc'),lockEl=document.getElementById('krLock'),floorEl=document.getElementById('krFloor'),stateEl=document.getElementById('krState');
+ var N=160, TWO=Math.PI*2;
+ // fixed standard-Cauchy sample; natural frequency = gamma * z, so K_c = 2*gamma stays exact as gamma moves
+ var z=new Float64Array(N), th=new Float64Array(N);
+ (function seed(){var s=20240613;function rnd(){s=(s*1103515245+12345)&0x7fffffff;return s/0x7fffffff;}
+  for(var i=0;i<N;i++){var v;do{v=Math.tan(Math.PI*(rnd()-0.5));}while(Math.abs(v)>10);z[i]=v;th[i]=rnd()*TWO;}})();
+ var FLOOR=1/Math.sqrt(N);
+ var K=0,G=0.5,rDisp=FLOOR;
+ function readK(){K=parseFloat(kEl.value);kOut.textContent=K.toFixed(2);}
+ function readG(){G=parseFloat(gEl.value);gOut.textContent=G.toFixed(2);kcEl.textContent=(2*G).toFixed(2);}
+ kEl.addEventListener('input',readK);gEl.addEventListener('input',readG);readK();readG();
+ floorEl.textContent=FLOOR.toFixed(2);
+ var dprL=Math.min(window.devicePixelRatio||1,1.4);
+ function fit(cv){var w=Math.max(2,(cv.clientWidth*dprL)|0),h=Math.max(2,(cv.clientHeight*dprL)|0);if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h;}return[cv.width,cv.height];}
+ window.addEventListener('resize',function(){fit(ringCv);fit(plotCv);});
+ function order(){var c=0,s=0;for(var i=0;i<N;i++){c+=Math.cos(th[i]);s+=Math.sin(th[i]);}c/=N;s/=N;return[Math.sqrt(c*c+s*s),Math.atan2(s,c)];}
+ function step(dt){var o=order(),r=o[0],psi=o[1];
+   for(var i=0;i<N;i++){th[i]+=(G*z[i]+K*r*Math.sin(psi-th[i]))*dt;if(th[i]>1e6)th[i]=th[i]%TWO;}
+   return o;}
+ function hsl(h,s,l,a){return 'hsla('+h+','+s+'%,'+l+'%,'+a+')';}
+ function drawRing(r,psi){
+   var d=fit(ringCv),W=d[0],H=d[1];
+   rx.fillStyle='#04050b';rx.fillRect(0,0,W,H);
+   var cx=W/2,cy=H*0.54,R=Math.min(W,H)*0.34;
+   rx.strokeStyle='rgba(150,170,210,0.16)';rx.lineWidth=1*dprL;rx.beginPath();rx.arc(cx,cy,R,0,TWO);rx.stroke();
+   rx.globalCompositeOperation='lighter';
+   for(var i=0;i<N;i++){var a=th[i],x=cx+Math.cos(a)*R,y=cy-Math.sin(a)*R;
+     var hue=((a%TWO+TWO)%TWO)/TWO*300+185;if(hue>360)hue-=360;
+     rx.fillStyle=hsl(hue|0,86,64,0.30);rx.beginPath();rx.arc(x,y,4.6*dprL,0,TWO);rx.fill();
+     rx.fillStyle=hsl(hue|0,92,76,0.95);rx.beginPath();rx.arc(x,y,1.9*dprL,0,TWO);rx.fill();}
+   rx.globalCompositeOperation='source-over';
+   // the order-parameter vector: direction = mean phase, length = r
+   var ex=cx+Math.cos(psi)*R*r,ey=cy-Math.sin(psi)*R*r;
+   rx.strokeStyle='rgba(255,255,255,'+(0.20+0.68*r).toFixed(3)+')';rx.lineWidth=2.1*dprL;rx.lineCap='round';
+   rx.beginPath();rx.moveTo(cx,cy);rx.lineTo(ex,ey);rx.stroke();
+   rx.fillStyle='rgba(255,255,255,'+(0.30+0.68*r).toFixed(3)+')';rx.beginPath();rx.arc(ex,ey,3.6*dprL,0,TWO);rx.fill();
+   rx.fillStyle='rgba(150,170,210,0.55)';rx.beginPath();rx.arc(cx,cy,2.2*dprL,0,TWO);rx.fill();
+   rx.fillStyle='rgba(170,178,197,0.9)';rx.font=(11.5*dprL)+'px '+getComputedStyle(document.body).fontFamily;rx.textAlign='center';
+   rx.fillText('r = '+r.toFixed(3),cx,cy+R+26*dprL);}
+ function drawPlot(r){
+   var d=fit(plotCv),W=d[0],H=d[1];
+   px.fillStyle='#04050b';px.fillRect(0,0,W,H);
+   var L=42*dprL,Rr=14*dprL,T=22*dprL,B=30*dprL,pw=W-L-Rr,ph=H-T-B;
+   var KMAX=4;
+   function X(k){return L+(k/KMAX)*pw;}
+   function Y(v){return T+(1-v)*ph;}
+   px.strokeStyle='rgba(150,170,210,0.14)';px.lineWidth=1;
+   for(var gy=0;gy<=1.0001;gy+=0.25){px.beginPath();px.moveTo(L,Y(gy));px.lineTo(L+pw,Y(gy));px.stroke();}
+   px.fillStyle='rgba(114,122,141,0.95)';px.font=(10*dprL)+'px '+getComputedStyle(document.body).fontFamily;
+   px.textAlign='right';px.fillText('1.0',L-7*dprL,Y(1)+3.5*dprL);px.fillText('0',L-7*dprL,Y(0)+3.5*dprL);
+   px.textAlign='center';px.fillText('K = 0',X(0)+11*dprL,H-10*dprL);px.fillText('4',X(4)-4*dprL,H-10*dprL);
+   px.save();px.translate(11*dprL,T+ph/2);px.rotate(-Math.PI/2);px.textAlign='center';px.fillText('order r',0,0);px.restore();
+   var Kc=2*G;
+   // finite-N floor
+   px.setLineDash([3*dprL,4*dprL]);px.strokeStyle='rgba(150,170,210,0.42)';px.beginPath();px.moveTo(L,Y(FLOOR));px.lineTo(L+pw,Y(FLOOR));px.stroke();
+   px.setLineDash([]);px.textAlign='left';px.fillStyle='rgba(150,170,210,0.72)';px.fillText('chance floor 1/√N',L+6*dprL,Y(FLOOR)-6*dprL);
+   // threshold marker
+   if(Kc<=KMAX){px.setLineDash([4*dprL,4*dprL]);px.strokeStyle='rgba(255,206,106,0.62)';px.beginPath();px.moveTo(X(Kc),T);px.lineTo(X(Kc),T+ph);px.stroke();px.setLineDash([]);
+    px.fillStyle='rgba(255,206,106,0.95)';px.textAlign='left';px.fillText('Kᴄ = 2γ = '+Kc.toFixed(2),X(Kc)+5*dprL,T+11*dprL);}
+   // exact mean-field curve for a Lorentzian: r = sqrt(1 - Kc/K)
+   px.strokeStyle='rgba(127,180,255,0.92)';px.lineWidth=2*dprL;px.beginPath();
+   var started=false;
+   for(var k=0;k<=KMAX+0.001;k+=KMAX/420){var v=(k>Kc&&k>0)?Math.sqrt(1-Kc/k):0;
+     if(!started){px.moveTo(X(k),Y(v));started=true;}else{px.lineTo(X(k),Y(v));}}
+   px.stroke();
+   px.fillStyle='rgba(127,180,255,0.85)';px.textAlign='right';px.fillText('theory √(1−Kᴄ/K)',L+pw-4*dprL,T+11*dprL);
+   // live measured point
+   var lx=X(Math.min(K,KMAX)),ly=Y(Math.min(1,r));
+   px.fillStyle='rgba(255,255,255,0.16)';px.beginPath();px.arc(lx,ly,9*dprL,0,TWO);px.fill();
+   px.fillStyle='rgba(255,255,255,0.98)';px.beginPath();px.arc(lx,ly,3.6*dprL,0,TWO);px.fill();}
+ var lastT=performance.now();
+ function frame(now){
+   var dt=Math.min(50,now-lastT);lastT=now;
+   var o=[0,0];var sub=4,h=(dt*0.001)*2.2/sub;
+   for(var s=0;s<sub;s++)o=step(h);
+   var r=o[0],psi=o[1];
+   rDisp+=(r-rDisp)*0.12;
+   // count oscillators actually phase-locked: |gamma*z_i| <= K*r means it can be entrained
+   var locked=0,thr=K*r;for(var i=0;i<N;i++){if(Math.abs(G*z[i])<=thr)locked++;}
+   drawRing(r,psi);drawPlot(rDisp);
+   rEl.textContent=rDisp.toFixed(3);
+   lockEl.textContent=Math.round(locked/N*100)+'%';
+   var Kc=2*G;
+   if(K<Kc*0.92){stateEl.innerHTML='<b>Below threshold.</b> Every oscillator is still running on its own nature. The order <i>r</i> is hovering near the chance floor of '+FLOOR.toFixed(2)+' &mdash; not zero, because 160 random phases never average to exactly nothing. That residue is arithmetic, not connection.';}
+   else if(K<Kc*1.12){stateEl.innerHTML='<b>At the threshold.</b> Kᴄ = 2&gamma; = '+Kc.toFixed(2)+'. Notice what does <i>not</i> happen here: nothing snaps. The order parameter lifts off continuously from the floor. This is a second-order transition &mdash; the change is in the slope, not in a jump.';}
+   else if(rDisp<0.85){stateEl.innerHTML='<b>Partially locked.</b> The oscillators nearest the middle of the spread have been captured; the extremes are still drifting free. '+Math.round(locked/N*100)+'% are entrained. Raising <i>K</i> pulls in more of the tails &mdash; and so does narrowing &gamma;, which lowers the threshold itself.';}
+   else{stateEl.innerHTML='<b>Locked.</b> The population is moving as one, and the white vector has grown to nearly the full radius. It got here by a smooth climb, not a snap &mdash; and the height of the bar it had to clear was set entirely by how different the oscillators were to begin with.';}
+   requestAnimationFrame(frame);}
+ fit(ringCv);fit(plotCv);requestAnimationFrame(frame);
+ // dual reading
+ setTimeout(function(){
+ var dn=document.querySelector('.lg-dual[data-tab="Coupling"]');
+ if(dn){var rv=dn.querySelector('[data-real]'),lv=dn.querySelector('[data-lens]'),tv=dn.querySelector('[data-tier]');
+  function updDual(){var Kc=2*G;
+   if(rv)rv.textContent='coupling K = '+K.toFixed(2)+' against threshold Kᴄ = 2γ = '+Kc.toFixed(2)+(K<Kc?' · below onset':' · above onset');
+   if(lv)lv.textContent=K<Kc?'still alone':'no longer alone';
+   if(tv){tv.textContent='established mathematics · the human reading is the lens';tv.className='lg-dual-tier est';}}
+  kEl.addEventListener('input',updDual);gEl.addEventListener('input',updDual);updDual();}
+ },0);
+})();
+</script>
+<div class="lg-dual" data-tab="Coupling"><div class="lg-dual-c real"><span class="lg-dual-k">&#9881; what the lever really sets</span><span class="lg-dual-v lg-dual-real" data-real>&mdash;</span><span class="lg-dual-tier" data-tier>&mdash;</span></div><div class="lg-dual-c lens"><span class="lg-dual-k">&#10022; the lens reading</span><span class="lg-dual-v lg-dual-lens" data-lens>&mdash;</span></div></div>
+<div class="lg-lens"><b>&#10022; Lens, not physics:</b> the reading that this is a picture of empathy &mdash; that people are oscillators and that connection is coupling &mdash; is mine, and it is a metaphor. The Kuramoto model is real, established mathematics about <i>oscillators</i>; nothing in it says a human being is one. Note carefully what the model does <i>not</i> license: it assumes every unit is already pulled toward the mean. That assumption is the whole result, and in a room of people it is exactly the thing you would have to prove.</div>
+<div class="lg-rsch">
+<div class="lg-rsch-head"><span class="lg-badge lg-badge-est">Established mathematics</span><span class="lg-rsch-title">the science behind it</span></div>
+<p class="lg-rsch-h">How it works</p><p class="lg-rsch-p">Yoshiki Kuramoto&#x27;s 1975 model is the standard description of spontaneous synchronization. Take N oscillators, each with its own natural frequency drawn from some distribution, and couple every one of them to the average of all the others with strength K. Kuramoto&#x27;s insight was that the whole coupled system collapses into a single self-consistent equation through the &quot;order parameter&quot; r, which measures how bunched the phases are: r = 0 is complete scatter, r = 1 is perfect unison. Each oscillator then obeys the same simple law &mdash; its own nature, plus a pull of size K&middot;r toward the crowd&#x27;s mean phase. That is exactly the equation running this panel. When the natural frequencies follow a Lorentzian distribution of half-width &gamma;, the model can be solved exactly: synchronization begins at K&#x1D04; = 2&gamma;, and above it the order grows as r = &radic;(1 &minus; K&#x1D04;/K). The blue curve on the right is that formula, and the white dot is what the 160 oscillators on the left are actually doing.</p>
+<p class="lg-rsch-h">Why it&rsquo;s easy to get wrong</p><p class="lg-rsch-p">Three things, and this panel is built to make all three visible. First, the transition is <em>continuous</em> &mdash; a second-order phase transition. The order parameter lifts smoothly off zero at the threshold; it does not snap, jump, or lock all at once. (Explosive, discontinuous synchronization does exist, but it requires special correlations between an oscillator&#x27;s frequency and how connected it is &mdash; an extra structure you have to put in deliberately.) Second, there is no universal critical number. K&#x1D04; is set entirely by the spread of the natural frequencies: halve &gamma; and you halve the threshold. Any quoted &quot;critical coupling of 1.8&quot; is a statement about one particular frequency distribution and nothing more &mdash; drag the &gamma; slider and watch the threshold move. Third, at finite N the order parameter never reads zero: random phases average to roughly 1/&radic;N &asymp; 0.08 for N = 160 by chance alone. Reading that residue as &quot;a little bit of connection&quot; is reading noise.</p>
+<p class="lg-rsch-h">Real vs. speculative</p><p class="lg-rsch-p">Established: the mathematics, and its physical instances. Real systems genuinely do this &mdash; metronomes on a rolling platform, arrays of Josephson junctions, the pacemaker cells of the heart and of the suprachiasmatic nucleus, chorusing fireflies, and the London Millennium Bridge, which in June 2000 was closed after pedestrians unconsciously fell into step with its sway; Strogatz and colleagues later modelled that failure as exactly this kind of coupling crossing its threshold. Not established: that human beings are Kuramoto oscillators. Treating empathy as the coupling constant K, or group harmony as an order parameter, is an analogy &mdash; a good and vivid one, but it borrows the authority of a solved equation for a system nobody has shown obeys it. The mathematics is real; the human reading of it is the lens, and it is tagged as such above.</p>
+<p class="lg-rsch-h">Sources</p><ul class="lg-rsch-src">
+<li><a href="https://en.wikipedia.org/wiki/Kuramoto_model" target="_blank" rel="noopener noreferrer">Kuramoto model</a> &#8212; Wikipedia (with the original 1975 Lecture Notes in Physics 39, 420 reference)</li>
+<li><a href="https://doi.org/10.1016/S0167-2789(00)00094-4" target="_blank" rel="noopener noreferrer">From Kuramoto to Crawford: exploring the onset of synchronization in populations of coupled oscillators</a> &#8212; Physica D 143, 1-20 (2000), S. H. Strogatz</li>
+<li><a href="https://doi.org/10.1103/RevModPhys.77.137" target="_blank" rel="noopener noreferrer">The Kuramoto model: A simple paradigm for synchronization phenomena</a> &#8212; Reviews of Modern Physics 77, 137 (2005), Acebr&oacute;n, Bonilla, P&eacute;rez Vicente, Ritort &amp; Spigler</li>
+<li><a href="https://doi.org/10.1038/438043a" target="_blank" rel="noopener noreferrer">Crowd synchrony on the Millennium Bridge</a> &#8212; Nature 438, 43-44 (2005), Strogatz, Abrams, McRobie, Eckhardt &amp; Ott</li>
+<li><a href="https://doi.org/10.1119/1.1501118" target="_blank" rel="noopener noreferrer">Synchronization of metronomes</a> &#8212; American Journal of Physics 70, 992 (2002), J. Pantaleone</li>
+</ul></div>
+</section>
+<section class="wpanel" data-title="Order from Flow">
+<div class="wtitle">Order from flow &middot; structure that has to be paid for</div>
+<div class="wdesc">A layer of fluid, warm below and cool above. Push the gradient gently and nothing happens &mdash; heat just seeps through. Push past a sharp threshold and the fluid organises itself into rolling cells that were nowhere in the ingredients. This is the one place in the console where the word <i>coherence</i> has a literal physical meaning.</div>
+<style>
+.of-box{position:relative;width:100%;border-radius:var(--border-radius-lg);overflow:hidden;background:#04050b;border:0.5px solid var(--color-border-tertiary)}
+.of-box canvas{display:block;width:100%;height:230px}
+.of-plate{position:absolute;left:0;right:0;height:18px;display:flex;align-items:center;justify-content:center;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;pointer-events:none}
+.of-plate.top{top:0;color:#8fb6ff;background:linear-gradient(180deg,rgba(60,110,220,0.30),transparent)}
+.of-plate.bot{bottom:0;color:#ffbe72;background:linear-gradient(0deg,rgba(220,130,40,0.32),transparent)}
+.of-rw{display:flex;align-items:center;gap:12px;margin-top:14px}
+.of-rw label{font-size:12px;color:var(--color-text-secondary);min-width:178px}
+.of-rw input[type=range]{flex:1}
+.of-rw .out{font-size:13px;font-weight:500;color:var(--color-text-info);min-width:78px;text-align:right;font-family:var(--font-mono)}
+.of-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:10px;margin-top:14px}
+.of-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px 14px}
+.of-card .lab{font-size:11px;color:var(--color-text-secondary);margin:0 0 4px}
+.of-card .val{font-size:22px;font-weight:500;color:var(--color-text-primary);margin:0;font-family:var(--font-mono)}
+.of-card .sub{font-size:11px;color:var(--color-text-tertiary);margin:3px 0 0}
+.of-state{margin-top:12px;padding:11px 14px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary);background:var(--color-background-tertiary);font-size:12.5px;line-height:1.58;color:var(--color-text-secondary)}
+.of-state b{color:var(--color-text-primary);font-weight:500}
+@media(max-width:640px){.of-box canvas{height:190px}.of-rw label{min-width:130px}}
+</style>
+<div class="of-box"><canvas id="ofCv"></canvas><div class="of-plate top">cold plate</div><div class="of-plate bot">warm plate</div></div>
+<div class="of-rw"><label for="ofRa">temperature gradient (Rayleigh number)</label><input id="ofRa" type="range" min="0" max="1000" step="1" value="703"><span class="out" id="ofRaOut">898</span></div>
+<div class="of-cards">
+<div class="of-card"><p class="lab">Ra</p><p class="val" id="ofRaV">898</p><p class="sub">driving gradient</p></div>
+<div class="of-card"><p class="lab">Ra<sub>c</sub></p><p class="val">657</p><p class="sub">= 27&pi;&#8308;/4, exact</p></div>
+<div class="of-card"><p class="lab">&epsilon;</p><p class="val" id="ofEps">+0.37</p><p class="sub">Ra/Ra<sub>c</sub> &minus; 1</p></div>
+<div class="of-card"><p class="lab">cells</p><p class="val" id="ofCells">2</p><p class="sub">counter-rotating</p></div>
+</div>
+<p class="of-state" id="ofState">&mdash;</p>
+<script>
+(function(){
+ var cv=document.getElementById('ofCv');if(!cv)return;
+ var ctx=cv.getContext('2d');
+ var raEl=document.getElementById('ofRa'),raOut=document.getElementById('ofRaOut');
+ var raV=document.getElementById('ofRaV'),epsEl=document.getElementById('ofEps'),cellsEl=document.getElementById('ofCells'),stateEl=document.getElementById('ofState');
+ var RAC=657.5, KC=Math.PI/Math.SQRT2; // stress-free critical values: Ra_c = 27*pi^4/4, k_c = pi/sqrt(2)
+ var GW=220,GH=64;
+ var off=document.createElement('canvas');off.width=GW;off.height=GH;
+ var octx=off.getContext('2d');var img=octx.createImageData(GW,GH);
+ var dprL=Math.min(window.devicePixelRatio||1,1.3);
+ var L=3.2,nRolls=2,k=2.2,shownRolls=-1,ofSyncDual=null;
+ function fit(){var w=Math.max(2,(cv.clientWidth*dprL)|0),h=Math.max(2,(cv.clientHeight*dprL)|0);
+  if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h;}
+  L=Math.max(1.2,cv.width/cv.height);
+  nRolls=Math.max(1,Math.round(L*KC/Math.PI));
+  k=nRolls*Math.PI/L;}
+ window.addEventListener('resize',fit);fit();
+ function sliderToRa(v){return Math.round(30*Math.pow(10,(v/1000)*2.1));} // ~30 .. ~3770, log
+ var Ra=sliderToRa(+raEl.value),amp=0,ampT=0;
+ function readRa(){Ra=sliderToRa(+raEl.value);raOut.textContent=Ra;raV.textContent=Ra;
+  var eps=Ra/RAC-1;epsEl.textContent=(eps>=0?'+':'−')+Math.abs(eps).toFixed(2);
+  ampT=eps>0?Math.min(1,Math.sqrt(eps)*0.62):0;
+  cellsEl.textContent=eps>0?nRolls:0;}
+ raEl.addEventListener('input',readRa);readRa();
+ var NT=260,tx=new Float64Array(NT),tz=new Float64Array(NT);
+ (function(){var s=99173;function rnd(){s=(s*1103515245+12345)&0x7fffffff;return s/0x7fffffff;}
+  for(var i=0;i<NT;i++){tx[i]=rnd()*L;tz[i]=0.04+rnd()*0.92;}})();
+ // stream function psi = A sin(kx) sin(pi z);  u = d(psi)/dz ;  w = -d(psi)/dx
+ function velU(x,z,A){return A*Math.PI*Math.sin(k*x)*Math.cos(Math.PI*z);}
+ function velW(x,z,A){return -A*k*Math.cos(k*x)*Math.sin(Math.PI*z);}
+ function lerp3(t){ // deep blue -> near black -> amber
+  var a,b,f;
+  if(t<0.5){a=[38,86,178];b=[13,15,27];f=t/0.5;}
+  else{a=[13,15,27];b=[255,172,72];f=(t-0.5)/0.5;}
+  return [a[0]+(b[0]-a[0])*f,a[1]+(b[1]-a[1])*f,a[2]+(b[2]-a[2])*f];}
+ function field(A){
+  var d=img.data,i=0;
+  for(var gy=0;gy<GH;gy++){
+   var z=1-(gy+0.5)/GH; // z=1 top (cold), z=0 bottom (warm)
+   for(var gx=0;gx<GW;gx++){
+    var x=((gx+0.5)/GW)*L;
+    var w=velW(x,z,A);
+    var T=(1-z)+w*0.42;      // conduction profile plus the eigenmode's thermal perturbation
+    if(T<0)T=0;if(T>1)T=1;
+    var c=lerp3(T);
+    d[i++]=c[0]|0;d[i++]=c[1]|0;d[i++]=c[2]|0;d[i++]=255;}}
+  octx.putImageData(img,0,0);}
+ var last=performance.now();
+ function frame(now){
+  var dt=Math.min(50,now-last)/1000;last=now;
+  fit();
+  if(nRolls!==shownRolls){shownRolls=nRolls;var e0=Ra/RAC-1;cellsEl.textContent=e0>0?nRolls:0;setState();if(ofSyncDual)ofSyncDual();}
+  amp+=(ampT-amp)*0.045;
+  var A=amp*0.5;
+  field(A);
+  var W=cv.width,H=cv.height;
+  ctx.imageSmoothingEnabled=true;
+  ctx.drawImage(off,0,0,GW,GH,0,0,W,H);
+  // tracers
+  ctx.globalCompositeOperation='lighter';
+  for(var i=0;i<NT;i++){
+   var u=velU(tx[i],tz[i],A),w=velW(tx[i],tz[i],A);
+   tx[i]+=u*dt*0.85;tz[i]+=w*dt*0.85;
+   if(tx[i]<0)tx[i]+=L;if(tx[i]>L)tx[i]-=L;
+   if(tz[i]<0.015)tz[i]=0.015;if(tz[i]>0.985)tz[i]=0.985;
+   var px=(tx[i]/L)*W,py=(1-tz[i])*H;
+   var sp=Math.min(1,Math.sqrt(u*u+w*w)*1.5);
+   var al=0.18+0.62*sp;
+   ctx.fillStyle='rgba(255,255,255,'+al.toFixed(3)+')';
+   ctx.beginPath();ctx.arc(px,py,(0.9+sp*1.1)*dprL,0,6.2832);ctx.fill();}
+  ctx.globalCompositeOperation='source-over';
+  requestAnimationFrame(frame);}
+ requestAnimationFrame(frame);
+ function setState(){
+  var eps=Ra/RAC-1;
+  if(eps<-0.06)stateEl.innerHTML='<b>Conduction.</b> The fluid is motionless. Heat crosses it by molecular collision alone, and the temperature simply falls in a straight line from the warm plate to the cold one. There is no pattern here because none is needed &mdash; and none would survive.';
+  else if(eps<0.06)stateEl.innerHTML='<b>At onset.</b> Ra&#8348; = 27&pi;&#8308;/4 = 657.5 for stress-free plates &mdash; the exact value Rayleigh derived in 1916. Right here the motionless state stops being stable. The fluid is about to start moving not because anything told it to, but because staying still no longer works.';
+  else if(eps<2.2)stateEl.innerHTML='<b>Convection.</b> '+nRolls+' counter-rotating roll'+(nRolls===1?'':'s')+', warm fluid climbing on one side and sinking on the other. Nothing in the water knows about rolls; the pattern is a property of the whole layer under throughflow. Cut the gradient and it is gone in seconds &mdash; this order is rented, not owned.';
+  else stateEl.innerHTML='<b>Well above onset.</b> The rolls are strong and the amplitude has grown roughly as &radic;&epsilon;. Be careful past here: real convection this far above threshold starts to wobble, drift and eventually go turbulent. This panel keeps drawing the clean near-onset mode, which is an idealisation &mdash; see the note below.';}
+ raEl.addEventListener('input',setState);setState();
+ setTimeout(function(){
+ var dn=document.querySelector('.lg-dual[data-tab="Order from Flow"]');
+ if(dn){var rv=dn.querySelector('[data-real]'),lv=dn.querySelector('[data-lens]'),tv=dn.querySelector('[data-tier]');
+  function upd(){var eps=Ra/RAC-1;
+   if(rv)rv.textContent='Ra = '+Ra+' against Raᴄ = 657.5 · '+(eps>0?nRolls+' convection roll'+(nRolls===1?'':'s')+' · amplitude ∝ √ε':'no motion · pure conduction');
+   if(lv)lv.textContent=eps>0?'an island of coherence, riding the gradient':'nothing to ride yet';
+   if(tv){tv.textContent='established physics · the "islands" reading is the lens';tv.className='lg-dual-tier est';}}
+  raEl.addEventListener('input',upd);upd();ofSyncDual=upd;}
+ },0);
+})();
+</script>
+<div class="lg-dual" data-tab="Order from Flow"><div class="lg-dual-c real"><span class="lg-dual-k">&#9881; what the lever really sets</span><span class="lg-dual-v lg-dual-real" data-real>&mdash;</span><span class="lg-dual-tier" data-tier>&mdash;</span></div><div class="lg-dual-c lens"><span class="lg-dual-k">&#10022; the lens reading</span><span class="lg-dual-v lg-dual-lens" data-lens>&mdash;</span></div></div>
+<div class="lg-lens"><b>&#10022; Lens, not physics:</b> reading these rolls as &ldquo;islands of coherence&rdquo; &mdash; and reading a person as one &mdash; is mine. What is <i>not</i> mine, and what makes this panel worth its place, is that this is the one honest referent for the word coherence in the whole console. There are three different things wearing that word: <i>quantum</i> coherence (a preserved superposition &mdash; destroyed almost instantly in warm wet tissue), <i>physiological</i> coherence (the real ~0.1 Hz heart-rate rhythm), and <i>this</i> &mdash; ordered structure sustained by throughflow. Only the third is what a living thing actually is. They share a word and nothing else.</div>
+<div class="lg-lens" style="border-left-color:#b98f3a;background:linear-gradient(180deg,rgba(255,206,106,0.08),rgba(255,206,106,0.02));border-color:rgba(255,206,106,0.3)"><b style="color:var(--color-text-warning)">&#9888; What this animation is:</b> the exact linear eigenmode of the Rayleigh&ndash;B&eacute;nard problem &mdash; stream function &psi; = A&#8201;sin(kx)&#8201;sin(&pi;z) &mdash; with its amplitude grown as &radic;&epsilon; from weakly-nonlinear theory. That is real, and it is right near onset. It is <i>not</i> a fluid simulation: no Navier&ndash;Stokes is being solved here, and far above threshold real convection breaks this pattern in ways this panel will not show you.</div>
+<div class="lg-rsch">
+<div class="lg-rsch-head"><span class="lg-badge lg-badge-est">Established science</span><span class="lg-rsch-title">the science behind it</span></div>
+<p class="lg-rsch-h">How it works</p><p class="lg-rsch-p">Henri B&eacute;nard photographed the effect in 1900 and Lord Rayleigh explained it in 1916. Heat a thin fluid layer from below and two influences compete: buoyancy wants warm fluid to rise, while viscosity and thermal diffusion want to smother any motion before it goes anywhere. The Rayleigh number Ra is the ratio between them. Below a critical value the fluid is provably stable and simply conducts heat, sitting perfectly still. Above it the motionless state becomes unstable and the layer spontaneously organises into counter-rotating rolls of a definite width, which is set by the depth of the layer, not by anything imposed from outside. For stress-free boundaries Rayleigh&#x27;s exact answer is Ra&#8348; = 27&pi;&#8308;/4 = 657.5 with critical wavenumber k&#8348; = &pi;/&radic;2; for two rigid plates, the case you would actually build, it is Ra&#8348; = 1707.8. Just above threshold the roll amplitude grows as the square root of the distance past it &mdash; the signature of a supercritical bifurcation.</p>
+<p class="lg-rsch-h">Why it matters &mdash; Prigogine&rsquo;s point</p><p class="lg-rsch-p">These rolls are the textbook example of what Ilya Prigogine named a <em>dissipative structure</em>, work that won the 1977 Nobel Prize in Chemistry. The pattern is highly ordered, but it is not stored anywhere and it is not a low-energy resting state the fluid was trying to reach. It exists only while energy flows through the system, and it actually produces <em>more</em> entropy than the motionless state it replaced &mdash; it is more efficient at moving heat, which is exactly why it wins. Shut off the gradient and it vanishes within seconds. Schr&ouml;dinger had made the same observation about life in 1944: an organism holds its order by continuously exporting disorder to its surroundings, feeding, as he put it, on negative entropy. The order is not a possession. It is a standing wave in a flow, and it has to be paid for continuously or it stops.</p>
+<p class="lg-rsch-h">Real vs. speculative</p><p class="lg-rsch-p">Everything above is established and reproducible &mdash; you can see B&eacute;nard cells in a pan of oil on a stove, and the same physics drives granulation on the surface of the Sun and convection in Earth&#x27;s mantle. The critical numbers are exact results from linear stability theory, and the &radic;&epsilon; amplitude scaling is standard weakly-nonlinear theory (Cross &amp; Hohenberg&#x27;s review is the reference). What is <em>not</em> established, and is flagged as lens above, is the extension to human beings: reading a person, a relationship or a society as a dissipative structure is a genuine and respectable analogy in complexity science, but it is an analogy. And one specific overreach to name plainly: order sustained by dissipation is the <em>opposite</em> of a frictionless or superconducting state. A convection roll is not low-friction &mdash; it exists precisely because it dissipates more. Any framework that treats &ldquo;perfect flow&rdquo; and &ldquo;zero resistance&rdquo; as the same idea has run these two together.</p>
+<p class="lg-rsch-h">Sources</p><ul class="lg-rsch-src">
+<li><a href="https://doi.org/10.1080/14786441608635602" target="_blank" rel="noopener noreferrer">On convection currents in a horizontal layer of fluid, when the higher temperature is on the under side</a> &#8212; Philosophical Magazine 32, 529-546 (1916), Lord Rayleigh</li>
+<li><a href="https://doi.org/10.1103/RevModPhys.65.851" target="_blank" rel="noopener noreferrer">Pattern formation outside of equilibrium</a> &#8212; Reviews of Modern Physics 65, 851 (1993), M. C. Cross &amp; P. C. Hohenberg</li>
+<li><a href="https://www.nobelprize.org/prizes/chemistry/1977/prigogine/facts/" target="_blank" rel="noopener noreferrer">Ilya Prigogine &#8212; Nobel Prize in Chemistry 1977, for dissipative structures</a> &#8212; NobelPrize.org</li>
+<li><a href="https://en.wikipedia.org/wiki/Rayleigh%E2%80%93B%C3%A9nard_convection" target="_blank" rel="noopener noreferrer">Rayleigh&ndash;B&eacute;nard convection</a> &#8212; Wikipedia (critical Rayleigh numbers 657.5 stress-free / 1707.8 rigid, after Chandrasekhar 1961)</li>
+<li><a href="https://en.wikipedia.org/wiki/What_Is_Life%3F" target="_blank" rel="noopener noreferrer">What Is Life?</a> &#8212; Erwin Schr&ouml;dinger, Cambridge University Press (1944) &#8212; life as order maintained by exporting entropy</li>
 </ul></div>
 </section>
 <section class="wpanel" data-title="Cosmic Torus">
@@ -3365,12 +3955,107 @@ applyScale();applySpeed();c2.fit(1.2);frame();
 <li><a href="https://sites.usask.ca/astr104/earths-precession-and-astrology-winter-2020/" target="_blank" rel="noopener noreferrer">Earth&#x27;s Precession and Astrology</a> — University of Saskatchewan, Astronomy of Planets (ASTR 104)</li>
 </ul></div>
 </section>
+<section class="wpanel" data-title="Misreadings">
+<div class="wtitle">Misreadings &middot; nine ways this gets read wrong</div>
+<div class="wdesc">The <b>Start Here</b> page opens the console by showing you how it is meant to be read. This page closes it by showing you how it actually gets read instead. Every entry below is a real claim I have seen made from this material &mdash; several of them made by me, and cut &mdash; set against what the physics actually says, with the reference so you can check me rather than trust me.</div>
+<style>
+.mr-lead{margin:0 0 20px;padding:15px 18px;border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-secondary);border-left:2.5px solid var(--color-text-warning);background:linear-gradient(100deg,rgba(255,206,106,0.075),rgba(255,206,106,0.012))}
+.mr-lead p{margin:0;font-size:13.5px;line-height:1.65;color:var(--color-text-secondary)}
+.mr-lead p+p{margin-top:9px}
+.mr-lead b{color:var(--color-text-primary);font-weight:500}
+.mr-item{border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);background:var(--color-background-tertiary);padding:0;margin-bottom:12px;overflow:hidden}
+.mr-claim{display:flex;gap:13px;padding:14px 17px;background:linear-gradient(100deg,rgba(255,138,138,0.075),rgba(255,138,138,0.01));border-bottom:0.5px solid var(--color-border-tertiary)}
+.mr-num{flex:0 0 auto;width:23px;height:23px;border-radius:50%;border:1px solid rgba(255,138,138,0.5);color:#ffb3b3;font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.mr-claim-t{margin:0;font-size:14px;line-height:1.5;color:#ffc4c4;font-weight:500}
+.mr-claim-t span{display:block;font-size:9.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:4px}
+.mr-fix{padding:14px 17px 15px 53px}
+.mr-fix-t{margin:0;font-size:13px;line-height:1.66;color:var(--color-text-secondary)}
+.mr-fix-t em{font-style:normal;color:var(--color-text-success);font-weight:500}
+.mr-fix-t b{color:var(--color-text-primary);font-weight:500}
+.mr-fix-h{display:block;font-size:9.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--color-text-success);margin-bottom:5px}
+.mr-src{margin:10px 0 0;font-size:11.5px;line-height:1.6;color:var(--color-text-tertiary)}
+.mr-src a{color:var(--color-text-info);text-decoration:none}
+.mr-src a:hover{text-decoration:underline}
+.mr-own{display:inline-block;margin-left:7px;font-size:9px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:2px 7px;border-radius:999px;border:1px solid rgba(150,120,255,0.5);color:#c2aaff;vertical-align:2px}
+.mr-close{margin-top:26px;padding:17px 19px;border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-secondary);background:linear-gradient(100deg,rgba(150,170,210,0.07),rgba(150,170,210,0.015))}
+.mr-close-h{font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:8px}
+.mr-close p{margin:0;font-size:13.5px;line-height:1.68;color:var(--color-text-secondary)}
+.mr-close p+p{margin-top:10px}
+.mr-close b{color:var(--color-text-primary);font-weight:500}
+@media(max-width:640px){.mr-fix{padding-left:17px}}
+</style>
+
+<div class="mr-lead">
+<p><b>Why this page exists.</b> Every one of these misreadings is built the same way: a real, correctly-cited result, with an inference bolted onto it that the result does not carry. That is a hard failure to spot, because checking the citation does not catch it &mdash; the citation is fine. Only checking the <i>step</i> catches it.</p>
+<p>The entries marked <span class="mr-own">mine, cut</span> are ones I held myself and removed once I worked out what was wrong with them. Leaving them here costs me nothing I want to keep, and a framework that cannot say how it fails is not being held honestly.</p>
+</div>
+
+<div class="mr-item">
+<div class="mr-claim"><span class="mr-num">1</span><p class="mr-claim-t"><span>The claim</span>Toroidal geometry explains cosmic expansion, so dark energy is unnecessary.<span class="mr-own">mine, cut</span></p></div>
+<div class="mr-fix"><p class="mr-fix-t"><span class="mr-fix-h">What the physics says</span><em>Topology cannot do this job.</em> A flat 3-torus has <b>exactly the same</b> Friedmann dynamics as ordinary flat space &mdash; identical local geometry, identical expansion history. Topology fixes how space is globally connected; it does not change the local equations, and so it cannot stand in for a cosmological constant. There is also a second problem: the observable signature of a 3-torus is matched pairs of circles in the microwave background, and that search has been run on real data and found nothing, which pushes any wrap-around cell out past the size of the observable universe.</p>
+<p class="mr-src">Sources: <a href="https://arxiv.org/abs/0704.3374" target="_blank" rel="noopener noreferrer">Luminet, &ldquo;The Shape and Topology of the Universe&rdquo; (arXiv:0704.3374)</a> &middot; <a href="https://doi.org/10.1103/PhysRevLett.92.201302" target="_blank" rel="noopener noreferrer">Cornish, Spergel, Starkman &amp; Komatsu, &ldquo;Constraining the Topology of the Universe,&rdquo; Phys. Rev. Lett. 92, 201302 (2004)</a>. See the <b>Cosmic Torus</b> panel, where the real open question is stated properly.</p></div>
+</div>
+
+<div class="mr-item">
+<div class="mr-claim"><span class="mr-num">2</span><p class="mr-claim-t"><span>The claim</span>String theory&rsquo;s 26 dimensions are two cycles of 13, confirming a base-13 ladder.<span class="mr-own">mine, cut</span></p></div>
+<div class="mr-fix"><p class="mr-fix-t"><span class="mr-fix-h">What the physics says</span><em>The 26 does not factor that way.</em> It comes out of cancelling the conformal anomaly in the bosonic string: the condition is (D&minus;2)/24 = 1, giving D = 26 as <b>24 transverse dimensions plus 2 light-cone</b> directions. There is no 13 anywhere in the derivation, and 13 is not the critical dimension of any string theory. The related argument &mdash; that twelve spheres pack around one, so twelve dimensions surround a thirteenth &mdash; is a real fact (the kissing number in three dimensions is 12) about <b>sphere packing</b>, which has nothing to do with counting dimensions of spacetime. Worth adding: the twelve outer spheres do not even touch each other; the arrangement has slack, which is precisely why Newton and Gregory could disagree about it for 180 years.</p>
+<p class="mr-src">Sources: <a href="https://en.wikipedia.org/wiki/Bosonic_string_theory" target="_blank" rel="noopener noreferrer">Bosonic string theory &mdash; the critical dimension</a> (after Polchinski, <i>String Theory</i> Vol. 1, CUP 1998) &middot; <a href="https://en.wikipedia.org/wiki/Kissing_number" target="_blank" rel="noopener noreferrer">Kissing number problem</a>.</p></div>
+</div>
+
+<div class="mr-item">
+<div class="mr-claim"><span class="mr-num">3</span><p class="mr-claim-t"><span>The claim</span>Entanglement proves separation is an illusion &mdash; what you do to one node, you do to the network.</p></div>
+<div class="mr-fix"><p class="mr-fix-t"><span class="mr-fix-h">What the physics says</span><em>Bell tests forbid exactly this reading.</em> The 2022 Nobel work of Aspect, Clauser and Zeilinger established that nature violates Bell inequalities, ruling out local hidden variables. It emphatically does <b>not</b> mean you can affect a distant partner. The no-communication theorem is rigorous: nothing you choose to do to your half of an entangled pair changes any measurable statistic on the other half. Entanglement produces correlations you cannot explain locally &mdash; it does not produce influence, and it cannot carry a signal. &ldquo;Change A and B instantly reacts&rdquo; is the single most common misstatement in popular physics, and every ethical argument built on it inherits the error.</p>
+<p class="mr-src">Sources: <a href="https://www.nobelprize.org/prizes/physics/2022/summary/" target="_blank" rel="noopener noreferrer">Nobel Prize in Physics 2022</a> &middot; <a href="https://plato.stanford.edu/entries/bell-theorem/" target="_blank" rel="noopener noreferrer">Bell&rsquo;s Theorem</a> &mdash; Stanford Encyclopedia of Philosophy. See the <b>Entanglement</b> panel.</p></div>
+</div>
+
+<div class="mr-item">
+<div class="mr-claim"><span class="mr-num">4</span><p class="mr-claim-t"><span>The claim</span>Particles gain mass by experiencing drag as they move through the Higgs field.</p></div>
+<div class="mr-fix"><p class="mr-fix-t"><span class="mr-fix-h">What the physics says</span><em>Not drag &mdash; drag would break relativity.</em> A genuine drag force would pick out a preferred rest frame and would slow moving objects down; the Higgs field does neither. Mass arises from a particle&rsquo;s coupling to the field&rsquo;s non-zero value everywhere in empty space, which is a fundamentally different thing from friction. And the scope is much smaller than the popular framing suggests: the Higgs mechanism accounts for the masses of <b>fundamental</b> particles, which is roughly <b>1%</b> of the mass of ordinary matter. The other 99% of your body&rsquo;s mass is the binding energy of the strong force inside protons and neutrons.</p>
+<p class="mr-src">Source: <a href="https://home.cern/science/physics/higgs-boson" target="_blank" rel="noopener noreferrer">The Higgs boson</a> &mdash; CERN. See the <b>Higgs</b> panel, which carries this caveat on the lever itself.</p></div>
+</div>
+
+<div class="mr-item">
+<div class="mr-claim"><span class="mr-num">5</span><p class="mr-claim-t"><span>The claim</span>Perfect inner flow generates an impenetrable boundary &mdash; the Meissner effect as a personal shield.</p></div>
+<div class="mr-fix"><p class="mr-fix-t"><span class="mr-fix-h">What the physics says</span><em>The physics runs the other way, twice.</em> First, direction: a superconductor reaches the Meissner state by having energy <b>removed</b> &mdash; cooled below its critical temperature &mdash; and it then sits in equilibrium producing essentially no entropy. It does not get there by radiating outward; sustained output <i>is</i> dissipation, which is the thing superconductivity is the absence of. Second, the shield is not absolute: raise the applied field past the critical field and superconductivity is destroyed outright, and Type-II superconductors let magnetic flux straight in as quantised vortices over a whole range of fields. A superconductor is the most conditional boundary in physics, not an unconditional one.</p>
+<p class="mr-src">Source: <a href="https://en.wikipedia.org/wiki/Meissner_effect" target="_blank" rel="noopener noreferrer">Meissner effect</a> &middot; <a href="https://en.wikipedia.org/wiki/Type-II_superconductor" target="_blank" rel="noopener noreferrer">Type-II superconductors and flux vortices</a>. On order that <i>is</i> sustained by flow, see the <b>Order from Flow</b> panel.</p></div>
+</div>
+
+<div class="mr-item">
+<div class="mr-claim"><span class="mr-num">6</span><p class="mr-claim-t"><span>The claim</span>Matter falls into a black hole, is crushed at the singularity, and blasts out of a white hole as a new universe.<span class="mr-own">mine, cut</span></p></div>
+<div class="mr-fix"><p class="mr-fix-t"><span class="mr-fix-h">What the physics says</span><em>Nothing passes through.</em> The white-hole region exists only in the idealised eternal Schwarzschild solution, which describes a black hole that was always there. A black hole formed by actual collapsing matter &mdash; the only kind we have evidence for &mdash; has no white-hole region at all. And even in the eternal solution the Einstein&ndash;Rosen bridge is <b>non-traversable</b>: Fuller and Wheeler showed in 1962 that it pinches off faster than anything could cross it, so no observer or signal ever gets through. White holes are also thermodynamically awkward in a way rarely mentioned: running a black hole backwards runs its entropy backwards too. Black-hole cosmology is real, published, speculative research &mdash; Smolin and Pop&#x142;awski both have serious versions &mdash; but it is not this picture, and it is not established.</p>
+<p class="mr-src">Sources: <a href="https://doi.org/10.1103/PhysRev.128.919" target="_blank" rel="noopener noreferrer">Fuller &amp; Wheeler, &ldquo;Causality and Multiply Connected Space-Time,&rdquo; Phys. Rev. 128, 919 (1962)</a> &middot; <a href="https://en.wikipedia.org/wiki/White_hole" target="_blank" rel="noopener noreferrer">White hole</a>.</p></div>
+</div>
+
+<div class="mr-item">
+<div class="mr-claim"><span class="mr-num">7</span><p class="mr-claim-t"><span>The claim</span>It takes about 10<sup>70</sup> qubits to encode one human being &mdash; you are a dense cluster of quantum information.</p></div>
+<div class="mr-fix"><p class="mr-fix-t"><span class="mr-fix-h">What the physics says</span><em>That is a ceiling, not a requirement, and it is off by roughly forty orders of magnitude.</em> The number is the Bekenstein bound for a sphere about a metre across: the <b>maximum</b> information any region that size could possibly contain, a limit saturated only if the region were a black hole. Reading a maximum as a requirement inverts it completely. A person&rsquo;s actual information content is unimaginably smaller &mdash; there are only around 10<sup>27</sup> atoms in a human body. (The unit is wrong too: the quantity is entropy in nats, not qubits.) The arithmetic is genuinely correct; the sentence built on it is not.</p>
+<p class="mr-src">Source: <a href="https://doi.org/10.1103/PhysRevD.23.287" target="_blank" rel="noopener noreferrer">Bekenstein, &ldquo;Universal upper bound on the entropy-to-energy ratio for bounded systems,&rdquo; Phys. Rev. D 23, 287 (1981)</a>.</p></div>
+</div>
+
+<div class="mr-item">
+<div class="mr-claim"><span class="mr-num">8</span><p class="mr-claim-t"><span>The claim</span>Synchronization snaps violently into place once coupling crosses a critical value of about 1.8.</p></div>
+<div class="mr-fix"><p class="mr-fix-t"><span class="mr-fix-h">What the physics says</span><em>Three errors in one sentence, and you can watch all three.</em> The standard Kuramoto transition is <b>continuous</b> &mdash; second-order &mdash; so the order parameter lifts smoothly off the floor rather than snapping. There is <b>no universal critical value</b>: for a Lorentzian spread of natural frequencies with half-width &gamma;, the threshold is exactly K&#x1D04; = 2&gamma;, so it moves the moment the population changes. And in any finite population the order parameter <b>never reads zero</b> &mdash; random phases average to about 1/&radic;N by chance alone, so a reading of 0.1 in a group of 100 is arithmetic, not a trace of connection.</p>
+<p class="mr-src">Source: <a href="https://doi.org/10.1016/S0167-2789(00)00094-4" target="_blank" rel="noopener noreferrer">Strogatz, &ldquo;From Kuramoto to Crawford,&rdquo; Physica D 143, 1-20 (2000)</a>. Open the <b>Coupling</b> panel and drag &gamma; &mdash; the threshold moves while you watch.</p></div>
+</div>
+
+<div class="mr-item">
+<div class="mr-claim"><span class="mr-num">9</span><p class="mr-claim-t"><span>The claim</span>Light has been turned into matter, so matter is frozen light &mdash; and thought, being energy, condenses into reality the same way.</p></div>
+<div class="mr-fix"><p class="mr-fix-t"><span class="mr-fix-h">What the physics says</span><em>The first half is real; the second half has no connection to it.</em> The Breit&ndash;Wheeler process was predicted in 1934 and observed by the STAR collaboration at RHIC in 2021 &mdash; two photons really can produce an electron&ndash;positron pair. But it requires photons with more than 1.022 MeV in the centre-of-mass frame, over a million times the energy of visible light, and it always produces matter together with <b>antimatter</b>, which promptly annihilates. It is ordinary quantum electrodynamics and E = mc&sup2; running backwards. It is not a mechanism by which mental states produce objects, and there is no version of it that scales down to a human being. Nor is &ldquo;matter is frozen light&rdquo; quite right in the first place: most of your mass is strong-force binding energy, not photons.</p>
+<p class="mr-src">Source: <a href="https://doi.org/10.1103/PhysRevLett.127.052302" target="_blank" rel="noopener noreferrer">STAR Collaboration, Phys. Rev. Lett. 127, 052302 (2021)</a> &mdash; Breit&ndash;Wheeler pair production observed.</p></div>
+</div>
+
+<div class="mr-close">
+<div class="mr-close-h">The pattern underneath all nine</div>
+<p>None of these fail because someone made up a fake source. Every citation above is real, correctly dated, and says what it is claimed to say. They fail at the <b>join</b> &mdash; one true statement, one true statement, and an inference between them that neither supports.</p>
+<p>That is why this console tags every claim rather than every source. A bibliography proves you read something. Tiering proves you know how far it reaches. If you take one thing from this page, take the habit: when a chain of real physics arrives somewhere that feels enormous, the thing to check is never the references. It is the step.</p>
+</div>
+</section>
 <!--PANELS_END--></main>
 <footer>Tip: only the open tab runs at full detail, so switching is smooth. Most 3D panels: drag to rotate, scroll to zoom. Built with Claude.</footer>
 <script>
 (function(){
  var panels=[].slice.call(document.querySelectorAll('.wpanel'));
- var ORDER=['Light Matrix','Higgs','Frequencies','Double-Slit','Qubit Collapse','Entanglement','Quantum Computer','Chamber','Timeline','Tetrahedron','12 Dimensions','Gravity','Holographic Planes','Rocket','Cosmic Torus','Calendar','One Reality','Heart & Mind','Connections'];
+ var ORDER=['Start Here','Light Matrix','Higgs','Frequencies','Double-Slit','Qubit Collapse','Entanglement','Quantum Computer','Chamber','Timeline','Coupling','Order from Flow','Tetrahedron','12 Dimensions','Gravity','Holographic Planes','Rocket','Cosmic Torus','Calendar','One Reality','Heart & Mind','Misreadings'];
  panels.sort(function(a,b){var ia=ORDER.indexOf(a.getAttribute('data-title'));var ib=ORDER.indexOf(b.getAttribute('data-title'));if(ia<0)ia=999;if(ib<0)ib=999;return ia-ib;});
  var nav=document.getElementById('nav');
  panels.forEach(function(p,i){var b=document.createElement('button');b.type='button';b.textContent=p.getAttribute('data-title');b.addEventListener('click',function(){show(i);});nav.appendChild(b);});
